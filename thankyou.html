@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Payment</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .container { border: 1px solid #ddd; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        h1 { color: #28a745; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Payment Successful!</h1>
+        <img src="https://www.labelvalue.com/media/catalog/product/L/V/LV-MRL24_-_THANK_YOU_FOR_YOUR_PAYMENT_1_1.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700" alt="Payment success">
+        <p><strong>Payment ID:</strong> <span id="payment-id"></span></p>
+        <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+        <p>Thank you for your payment!</p>
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <script>
+        // Extract payment details from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('payment-id').textContent = urlParams.get('payment_id');
+        document.getElementById('order-id').textContent = urlParams.get('order_id');
+    </script>
+</body>
+</html>
